@@ -1,0 +1,89 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Vida</title>
+</head>
+<body>
+  
+    <section class="contenedor-flex">
+      <div class="form-flex divBordeAzul" style="flex-direction:column;padding-right: 2px;">
+        <div id="datos">
+          <div>Altura: {{tableroAlto}}</div>
+          <div>Ancho:  {{tableroAncho}}</div>
+          <div>Juego Vida Iniciado: {{juegoVidaIniciado}}</div>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <form [formGroup]="formOption" style="margin-top: 5px;">
+          <div class="form-check">
+            <label>
+              <input type="radio" formControlName="opcionSeleccionada" [value]="1" (change)="onChangeGame()"> Ruido
+            </label>
+          </div>
+          
+          <div class="form-check">
+            <label>
+              <input type="radio" formControlName="opcionSeleccionada" [value]="2" (change)="onChangeGame()"> Color Fade
+            </label>
+          </div>
+          
+          <div class="form-check">
+            <label>
+              <input type="radio" formControlName="opcionSeleccionada" [value]="3" (change)="onChangeGame()"> Juego Vida
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="divBordeAzul">Opciones
+        <form class = "form-flex sm:col-7" [formGroup]="vidaForm" (ngSubmit)="aplicarCambios()">
+          <!-- <mat-form-field class="col-6" style="border: 2px solid black"> -->
+          <div class="flex-text-col">
+            <label for="refreshRate">Tasa de Refresco</label>
+            <input class ="primary-text" formControlName="refreshRate" type="number" min="0" max="2000" step="2" id="refreshRate"/>
+          </div>
+          <!-- </mat-form-field> -->
+          <div class="flex-text-col">
+            <mat-label for="numCelulas">Nº de células</mat-label>
+            <input class ="primary-text" formControlName="numCelulas" type="number" min="0" max="2000" step="50" id="numCelulas"/>
+          </div>
+          <div class="flex-text-col">
+            <label for="alto">Bloques Altura</label>
+            <input class ="primary-text" formControlName="boardHeight" type="number" min="0" max="1440" step="50" id="alto"/>
+          </div>          
+          <div class="flex-text-col">
+            <mat-label for="alto">Bloques Ancho</mat-label>
+            <input class ="primary-text" formControlName="boardWidth" type="number" min="0" max="1440" step="50" id="ancho"/>
+          </div>          
+          <div class="flex-text-col">
+            <mat-label for="TamBloque">Tamaño Bloque</mat-label>
+            <input class ="primary-text" formControlName="blockSize" type="number" min="0" max="20" step="1" id="TamBloque"/>
+          </div> 
+          <div style="margin-right: 5px;margin-top: 5px">
+            <button type="submit" class="secondary-button">Aplicar Cambios</button>
+          </div> 
+          <div id="Otros botones" style="margin-top: 5px;" class="form-flex">
+            <div style="margin-right: 5px">
+              <button type="button" class="primary-button" [ngStyle]= "{'color': btColorText}" (click)="pararReanudar()">
+                {{btActivarLabel}}
+              </button>
+            </div>    
+            <div style="margin-right: 5px">
+              <button type="button" class="green-button" (click)="reset()">
+                Reset
+              </button>
+            </div>
+          </div>   
+          
+
+          
+          
+        </form>
+      </div>
+    </section>  
+    <div style="margin-top: 5px;padding: 1px" id = "app"> 
+      <canvas id = "canvas"></canvas>
+    </div>      
+    
+</body>
+

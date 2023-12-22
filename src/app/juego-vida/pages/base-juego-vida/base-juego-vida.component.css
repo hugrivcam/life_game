@@ -1,0 +1,132 @@
+:root{
+  color-scheme: dark light;
+  color:rgba(255,255,255,0.8);
+  background-color: black;
+
+}
+body{
+  margin: 2px;
+  padding: 5px;
+  display: grid;
+  place-content: left;
+  background: linear-gradient(to bottom, #f9f5fa, #081f37);
+  font-size:medium ;
+}
+
+.contenedor-flex{
+  /* border: 2px solid black; */
+  display:flex;
+}
+.contenedor-grid
+{
+  border: 2px solid black;
+  display:grid;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 36% auto;  
+  max-height: 36%;
+}
+
+.divBordeAzul
+{
+  border: 2px solid rgb(89, 126, 235);
+}
+/* .contenedor-grid div{
+  border: 2px solid rgb(89, 126, 235);
+  
+}/* 
+
+
+
+/* .contenedor mat-form-field{
+    border: 2px solid rgb(225, 235, 89);
+} */
+
+.form-flex{
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  /* border: 2px solid rgb(200, 172, 17); */
+  padding: 0px;
+  
+}
+.form-grid{
+  width: 99.9%;
+  height: 89%;
+  border: 2px solid rgb(200, 172, 17);
+  display:grid;
+  /* max-height: 250px; */
+  padding: 0px;
+  grid-template-columns: auto  auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-rows: 40% 60%;   
+}
+
+.primary-button{
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 2px solid rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  color: white;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.primary-button:hover{
+  background-color: rgba(86, 45, 125,1); 
+}
+
+.secondary-button{
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 2px solid rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  color: white;
+  background-color: rgb(80, 63, 234);
+  cursor: pointer;
+}
+
+.green-button{
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 2px solid rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  color: white;
+  background-color: rgb(52, 164, 46);
+  cursor: pointer;
+}
+.green-button:hover{
+  background-color: rgb(32, 97, 32);
+}
+.secondary-button:hover{
+  background-color: rgb(48, 45, 125);
+  
+}
+
+.primary-text{
+  font-size: 1em;
+  border-radius: 3px;
+  border: 2px solid rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  color: white;
+  background-color: rgb(164, 157, 222);
+}
+
+.flex-text-col{
+  display:flex;
+  flex-direction: column;
+  margin-right:5px;
+}
+
+
+/*@keyframes ripple {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
+}*/
+
